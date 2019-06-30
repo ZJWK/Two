@@ -15,3 +15,6 @@ huishi=float(input('请输入华氏温度：'))
 sheshi=(huishi-32)/1.8
 print('华氏温度转换为摄氏温度为：',sheshi)
 
+
+
+
