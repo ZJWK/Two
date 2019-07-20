@@ -16,5 +16,28 @@ sheshi=(huishi-32)/1.8
 print('华氏温度转换为摄氏温度为：',sheshi)
 
 
+#输入圆的半径计算周长和面积
+R=int(input("请输入圆的半径："))
+c=2 * math.pi*R
+s=math.pi*R*R
+print("圆的周长为：",'%.2f'%c)
+print("圆的面积为：",'%.2f'%s)
+
+
+
+#输入年份判断是否是闰年
+year=int(input("请输入年份:"))
+if year%100==0:
+    if year%400==0:
+        print("%d是闰年"%year)
+    else:
+        print("%d不是闰年"%year)
+else:
+    if year%4==0:
+        print("%d是闰年"%year)
+    else:
+        print("%d不是闰年"%year)
+
+
 
 
