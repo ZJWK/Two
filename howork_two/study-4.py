@@ -200,3 +200,47 @@ def func(x,**kwargs):
 注：　在函数内部，可以引用全局变量；如果全局和局部都有一个变量，函数查找，由内而外，局部没有，再到全局找
 
 '''
+
+
+'''
+round()--返回浮点数x的四舍五入值。
+eg:
+'''
+# a = round(1.1281,2)
+# print(a)
+
+# def add(x, y):
+#     result = x+y
+#     return result
+#
+# def print_code(str):
+#     print(str)
+#
+# a = add(1,2)
+# b = print_code('hi')
+# print(a,b)     因为def print_code()函数里有返回值，所以会返回none
+
+# 让函数返回多个结果：以元祖的方式返回
+# eg:
+
+# def power(x,y):
+#       power1 = x+3
+#       power2 = y*2+10
+#       return (power1 , power2)
+#
+# c  = power(3, 6)
+# # 分别返回值
+# power1,power2 = power(3,6)  # 序列解包
+# print(power1,power2)
+# print(type(c))
+
+
+# 序列解包
+
+
+
+
+
+
+
+
