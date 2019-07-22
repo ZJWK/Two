@@ -6,9 +6,20 @@
 # selenium验证安装：将浏览器驱动复制到Python安装路径
 # 谷歌浏览器驱动下载地址:https://chromedriver.storage.googleapis.com/index.html
 
-# from selenium import webdrive
-# drive = webdrive.Firefox()
+from selenium import webdrive
+driver = webdrive.Firefox()
+driver.get("https://baidu.com")
 
+
+# from time import sleep
+# from selenium import webdriver
+#
+# driver = webdriver.Firefox()
+# driver.get("https://www.baidu.com")
+# driver.find_element_by_id("kw").send_keys("python")
+# driver.find_element_by_id("su").click()
+# sleep(3)
+# driver.close()
 
 
 '''
