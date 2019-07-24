@@ -41,6 +41,7 @@ submit()---提交表单
 # driver.find_element_by_id("su").click()
 
 # eg:通过class查找
+'''
 from selenium import webdriver
 driver = webdriver.Chrome()
 # 跳转到具体的网页地址
@@ -50,3 +51,17 @@ print(driver.title)
 driver.find_element_by_class_name("s_ipt").send_keys("慕课网")
 # 选中按钮，点击按钮“百度一下”
 driver.find_element_by_id("su").click()
+'''
+
+
+# 通过find_element_by_link_text()查找   超链接
+from selenium import webdriver
+from time import sleep
+driver = webdriver.Chrome()
+# driver.get("https://www.baidu.com")
+driver.get("https://www.imooc.com")
+print(driver.title)
+sleep(3)   # 设置睡眠时间2s
+# driver.find_element_by_link_text("地图").click()
+#模糊查询
+driver.find_element_by_partial_link_text("课程")
