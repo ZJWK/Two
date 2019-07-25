@@ -57,11 +57,19 @@ driver.find_element_by_id("su").click()
 # 通过find_element_by_link_text()查找   超链接
 from selenium import webdriver
 from time import sleep
-driver = webdriver.Chrome()
+# driver = webdriver.Chrome()
+driver = webdriver.Firefox()
 # driver.get("https://www.baidu.com")
 driver.get("https://www.imooc.com")
 print(driver.title)
-sleep(3)   # 设置睡眠时间2s
+sleep(5)   # 设置睡眠时间2s
 # driver.find_element_by_link_text("地图").click()
 #模糊查询
-driver.find_element_by_partial_link_text("课程")
+# driver.find_element_by_partial_link_text("课程").click()
+# CSS_selector查询
+# driver.find_element_by_css_selector("html body#index div#main div.bgfff.banner-box div.g-banner.pr div.g-banner-content div.path-banner.clearfix a p.tit").click()
+
+# xpath查询
+driver.find_element_by_xpath("/html/body/div[4]/div[2]/div/div[10]/div[2]/a[2]/p[1]").click()
+print(driver.title)
+
