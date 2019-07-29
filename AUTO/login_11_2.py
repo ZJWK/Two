@@ -20,6 +20,10 @@ pwdP = driver.find_element_by_name("password")
 pwdP.clear()
 pwdP.send_keys(pwd)
 
+# 点击“记住登录密码”单选框
+auto_login = driver.find_element_by_id("auto-signin").click()
+
+
 # 查找登录按钮并摁下
 btn = driver.find_element_by_css_selector("input.moco-btn").click()
 
