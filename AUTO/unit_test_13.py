@@ -18,6 +18,8 @@ Project:使用unittest框架编写测试用例思路
 '''
 # 3.导入unittest模块
 import unittest
+import HTMLTestRunner
+import time
 
 
 # 4.定义测试类，父类为unittest.TestCase。
@@ -45,10 +47,10 @@ class Test(unittest.TestCase):
         print(self.number)
         self.assertEqual(self.number, 20, msg='Your input is not 20')
 
-    @unittest.skip('暂时跳过用例3的测试')
-    def test_case3(self):
-        print(self.number)
-        self.assertEqual(self.number, 30, msg='Your input is not 30')
+    # @unittest.skip('暂时跳过用例3的测试')
+    # def test_case3(self):
+    #     print(self.number)
+    #     self.assertEqual(self.number, 30, msg='Your input is not 30')
 
     # 7.定义tearDown()方法用于测试用例执行之后的善后工作。
     # 注意，方法的入参为self
@@ -61,7 +63,24 @@ if __name__ == '__main__':
     # 8.1执行测试用例方案一如下：
     # unittest.main()方法会搜索该模块下所有以test开头的测试用例方法，并自动执行它们。
     # 执行顺序是命名顺序：先执行test_case1，再执行test_case2
-    unittest.main()
+    # unittest.main()
+
+    suite = unittest.TestSuite()
+    suite.addTest(Test('test_case2'))
+    suite.addTest(Test('test_case1'))
+    # 这里的verbosity是一个选项,表示测试结果的信息复杂度，有三个值
+    # 0(静默模式): 你只能获得总的测试用例数和总的结果比如,总共100个失败20成功80
+    # 1(默认模式): 非常类似静默模式,只是在每个成功的用例前面有个“.” 每个失败的用例前面有个 “F”
+    # 2(详细模式): 测试结果会显示每个测试用例的所有相关的信息,并且你在命令行里加入不同的参数可以起到一样的效果
+    # runner = unittest.TestRunner(verbosity=2)
+    # runner.run(suite)
+    filename = time.strftime('%Y-%m-%d %H_%M_%S', time.localtime())
+    print(filename)
+    fp = open("./" + filename + "_report.html", "wb")
+    runner = HTMLTestRunner.HTMLTestRunner(stream=fp, title=u"demo 测试报告", description=u"测试用例执行情况")
+    runner.run(suite)
+    fp.close()
+
 
 '''
 #8.2执行测试用例方案二如下：
