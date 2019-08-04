@@ -72,7 +72,7 @@ if __name__ == '__main__':
     # 0(静默模式): 你只能获得总的测试用例数和总的结果比如,总共100个失败20成功80
     # 1(默认模式): 非常类似静默模式,只是在每个成功的用例前面有个“.” 每个失败的用例前面有个 “F”
     # 2(详细模式): 测试结果会显示每个测试用例的所有相关的信息,并且你在命令行里加入不同的参数可以起到一样的效果
-    # runner = unittest.TestRunner(verbosity=2)
+    # runner = unittest.TextTestRunner(verbosity=1)
     # runner.run(suite)
     filename = time.strftime('%Y-%m-%d %H_%M_%S', time.localtime())
     print(filename)

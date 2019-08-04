@@ -29,7 +29,7 @@ if __name__=='__main__':
     suite.addTest(Test('test_One'))
     suite.addTest(Test1('test_One'))
 
-    # runner = unittest.TestRunner()
+    # runner = unittest.TextTestRunner()
     # runner.run(suite)
     filename = time.strftime('%Y-%m-%d %H_%M_%S', time.localtime())
     print(filename)
